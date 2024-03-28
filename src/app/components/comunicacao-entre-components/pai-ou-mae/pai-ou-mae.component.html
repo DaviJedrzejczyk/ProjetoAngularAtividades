@@ -1,0 +1,7 @@
+<h2>Comunicação entre components</h2>
+<app-input [inputName]="name()"></app-input>
+<app-output (outputName)="outputName.set($event)"></app-output>
+
+<p>
+    {{outputName()}}
+</p>

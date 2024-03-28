@@ -1,0 +1,89 @@
+<h2>Template-driven forms</h2>
+<form #form="ngForm">
+  <label>
+    Nome:
+    <input
+      type="text"
+      name="inputName"
+      #name="ngModel"
+      [ngModel]="name.value"
+      required
+    />
+  </label>
+
+  <hr />
+  <p>Value:{{ name.value }}</p>
+  <p>Valid:{{ name.valid }}</p>
+  <p>Dirty:{{ name.dirty }}</p>
+  <p>Touched:{{ name.touched }}</p>
+  <hr />
+
+  <label>
+    Feminino:
+    <input
+      type="radio"
+      value="Feminino"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required
+    />
+  </label>
+
+  <label>
+    Masculino:
+    <input
+      type="radio"
+      value="Masculino"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required
+    />
+  </label>
+  <hr />
+  <p>Value:{{ sexo.value }}</p>
+  <p>Valid:{{ sexo.valid }}</p>
+  <p>Dirty:{{ sexo.dirty }}</p>
+  <p>Touched:{{ sexo.touched }}</p>
+  <hr />
+
+  <label>
+    Angular:
+    <input
+      type="checkbox"
+      value="Angular"
+      name="checkboxAngular"
+      #tech="ngModel"
+      [ngModel]="tech.value"
+      required
+    />
+  </label>
+  <hr />
+  <p>Value:{{ tech.value }}</p>
+  <p>Valid:{{ tech.valid }}</p>
+  <p>Dirty:{{ tech.dirty }}</p>
+  <p>Touched:{{ tech.touched }}</p>
+  <hr />
+
+  <select name="selectComida" #comidas="ngModel" ngModel>
+    <option value="">Selecione um alimento</option>
+    @for (item of listComida(); track item) {
+    <option [ngValue]="item">{{ item.comida }}</option>
+    }
+  </select>
+
+  <hr />
+  <p>Value:{{ comidas.value | json }}</p>
+  <p>Comida:{{ comidas.value?.comida }}</p>
+  <p>Preco:{{ comidas.value?.preco }}</p>
+  <p>Valid:{{ comidas.valid }}</p>
+  <p>Dirty:{{ comidas.dirty }}</p>
+  <p>Touched:{{ comidas.touched }}</p>
+  <hr />
+
+  <button [disabled]="!form.valid">Send</button>
+</form>
+
+<p>Form valid: {{ form.valid }}</p>
+<p>Form value: {{ form.value | json }}</p>

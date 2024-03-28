@@ -1,0 +1,59 @@
+<h2>Deferrable Views</h2>
+
+@defer{
+    <app-new-component/>
+}
+@placeholder{
+    <p>Mostrar antes de carregar algo</p>
+}
+@loading{
+    <p>Loading...</p>
+}
+@error{
+    <p>Loading failed</p>
+}
+
+<hr>
+
+@defer(){                                     //idle, timer(5s), viewport("carrega somente quando o scrool do navegador estiver no component")
+    <app-new-component/>                            //interaction("carrega quando voce interage com algum componente da pagina"), hover, immediate, 
+}
+@placeholder{
+    <p>Mostrar antes de carregar algo</p>
+}
+@loading{
+    <p>Loading...</p>
+}
+@error{
+    <p>Loading failed</p>
+}
+
+<hr>
+
+@defer(when isTrue){
+    <app-new-component/>
+}
+@placeholder{
+    <p>Mostrar antes de carregar algo</p>
+}
+@loading{
+    <p>Loading...</p>
+}
+@error{
+    <p>Loading failed</p>
+}
+
+<hr>
+
+ <!--@defer(on interaction){
+    <app-new-component/>
+}
+@placeholder(minimun 2s){
+    <p>Mostrar antes de carregar algo</p>
+}
+@loading(after 150ms, minimum 5s){
+    <p>Loading...</p>
+}
+@error{
+    <p>Loading failed</p>
+}-->

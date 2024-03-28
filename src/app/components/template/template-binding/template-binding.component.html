@@ -1,0 +1,48 @@
+<p>template-binding works!</p>
+
+{{name}}
+
+
+<button [disabled]="isDisabled">butao</button>
+
+<hr/>
+<h2>Property Binding</h2>
+
+<img [src]="srcValue"/>
+
+
+<hr/>
+
+<h2>Attribute Biding</h2>
+<p [attr.aria-label]="name">Sium</p>
+
+<hr>
+
+<h2>Class And Styles Binding</h2>
+<p [class.background-red]="age >= 32" [class.background-blue]="age === 32">{{name}}</p>
+
+<p [style.text-decoration]="'underline'">Teste</p>
+<p [style.text-decoration]="isTextDecoration">Teste</p>
+
+<hr>
+
+<h2>Event Binding</h2>
+
+<button (click)="Sum()">+</button>
+<button (click)="Sub()">-</button>
+
+<input (keydown.shift.t)="onKeyDown($event)">
+
+<div style="background-color: red;"(mousemove)="onMouseEvent($event)"></div>
+
+<hr>
+<h2>Two-way Biding</h2>
+
+<input [(ngModel)]="name">
+
+<hr>
+<h2>Ng Class e Ng Style</h2>
+
+ <!--<div [ngClass]="{'background-red: true'}">Classes condicionais</div>
+
+ <div [ngStyle]="{color: age > 35 ? red : green}">Estilos dinamicos</div> -->

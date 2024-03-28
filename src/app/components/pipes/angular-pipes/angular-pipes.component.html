@@ -1,0 +1,32 @@
+<h2>Pipes</h2>
+<ul>
+    <li>
+        {{date() | date:'short'}}
+    </li>
+    <li>
+        {{"Testeeeeeeeeeeeeeeeeee" | uppercase}}
+    </li>
+    <li>
+        {{"Testeeeeeeeeeeeeeeeeee" | lowercase}}
+    </li>
+    <li>
+      json:  {{jsonPipe() | json}}
+    </li>
+    <li>
+      async: {{loadingData$ | async}}
+      </li>
+
+      <li>
+       currency: {{250.5 | currency: "BRL"}}
+     </li>
+     <li>
+        number: {{2000.5 | number: "1.0-2"}}
+     </li>
+     <li>
+        percent: {{0.2 | percent : "1.0-2   "}}
+     </li>
+     <li>
+        percent: {{"Teste"| customString : "lower"}}
+     </li>
+   
+</ul>

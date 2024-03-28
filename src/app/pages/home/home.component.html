@@ -1,0 +1,14 @@
+<a
+  [routerLink]="['/curso']"
+  routerLinkActive="active"
+  ariaCurrentWhenActive="page"
+  >Home</a
+>
+<hr />
+<a [routerLink]="['sobre']">Sobre</a>
+<hr />
+<a [routerLink]="['servicos', '1']" [queryParams]="{ name: 'xpto', age: 33 }"
+  >Serviços</a
+>
+<hr />
+<a [routerLink]="['opakwd']">NotFound</a>
